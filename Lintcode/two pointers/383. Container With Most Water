@@ -4,6 +4,9 @@ public class Solution {
      * @param heights: a vector of integers
      * @return: an integer
      */
+    /*
+        左右指针，每次计算面积后移动较小的那个
+    */
     public int maxArea(int[] heights) {
         // write your code here
         int len = heights.length - 1;
