@@ -1,0 +1,44 @@
+public class Solution {
+    /**
+    https://www.lintcode.com/problem/363/
+     * @param heights: a list of integers
+     * @return: a integer
+     */
+    public int trapRainWater(int[] heights) {
+        // write your code here
+        int len = heights.length;
+        int[] leftMost = new int[len];
+        int[] rightMost = new int[len];
+
+        int leftMax = 0;
+        for (int i = 0; i < len; i++) {
+            if (i == 0) {
+                leftMax = heights[i];
+            }
+            else {
+                leftMost[i] = leftMax;
+                leftMax = Math.max(leftMax, heights[i]);
+            }
+
+            
+        }
+        int rightMax = 0;
+        for (int i = len - 1; i >= 0; i--) {
+            if (i == len - 1) {
+                rightMax = heights[i];
+            }
+            else {
+                rightMost[i] = rightMax;
+                rightMax = Math.max(rightMax, heights[i]);
+            }
+        }
+        int res = 0;
+        for (int i = 0 ; i < len; i++) {
+            int app = Math.min(leftMost[i], rightMost[i]) - heights[i];
+            if (app > 0) {
+                res += app;
+            }
+        }
+        return res;
+    }
+}

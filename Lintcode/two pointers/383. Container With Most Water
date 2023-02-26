@@ -1,0 +1,23 @@
+public class Solution {
+    /**
+    https://www.lintcode.com/problem/383/
+     * @param heights: a vector of integers
+     * @return: an integer
+     */
+    public int maxArea(int[] heights) {
+        // write your code here
+        int len = heights.length - 1;
+        int left = 0, right = len;
+        int res = 0;
+        while (left <= right) {
+            int sq = (right- left) * Math.min(heights[left], heights[right]);
+            res = Math.max(res, sq);
+            if (heights[left] < heights[right])
+                left++;
+            else {
+                right--;
+            }
+        }
+        return res;
+    }
+}

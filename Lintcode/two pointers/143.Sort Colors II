@@ -1,0 +1,39 @@
+public class Solution {
+    /**
+    https://www.lintcode.com/problem/143/solution
+     * @param colors: A list of integer
+     * @param k: An integer
+     * @return: nothing
+     */
+    public void sortColors2(int[] colors, int k) {
+        // write your code here
+        partition(colors, 0, colors.length - 1, 1, k);
+        
+    }
+    public void partition(int[] colors, int start, int end, int lowk, int highk) {
+        if (lowk == highk || start == end) {
+            return; // don't forget this statement
+        }
+        int left = start, right = end;
+        int mid = (lowk + highk) / 2;
+        while (left <= right) {
+            while (left <= right && colors[left] <= mid) { // remember this, difference between quick sort template
+                left++;
+            }
+            while (left <= right && colors[right] > mid) {
+                right--;
+            }
+            if (left <= right) {
+                int temp = colors[right];
+                colors[right] = colors[left];
+                colors[left] = temp;
+                right--;
+                left++;
+            }
+
+        }
+        partition(colors, start, right, lowk, mid);
+        partition(colors, left, end, mid + 1, highk);
+
+    }
+}

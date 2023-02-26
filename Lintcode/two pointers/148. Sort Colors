@@ -1,0 +1,32 @@
+public class Solution {
+    /**
+    https://www.lintcode.com/problem/148
+     * @param nums: A list of integer which is 0, 1 or 2
+     * @return: nothing
+     */
+    public void sortColors(int[] nums) {
+        // write your code here
+        int left = 0, right = nums.length - 1;
+        int mid = 0;
+        while (mid <= right) {
+            if (nums[mid] == 1) {
+                mid++;
+
+            }
+            else if (nums[mid] == 2 ) {
+                int temp = nums[right];
+                nums[right] = 2;
+                nums[mid] = temp;
+                right--;
+            }
+            else {
+                int temp = nums[left];
+                nums[left] = 0;
+                nums[mid] = temp;
+                left++;
+                mid++; // avoid nums[left] = 0, nums[right] = 0;
+                
+            }
+        }
+    }
+}
