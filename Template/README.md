@@ -1,0 +1,1 @@
+# Template for classic algorithms.
