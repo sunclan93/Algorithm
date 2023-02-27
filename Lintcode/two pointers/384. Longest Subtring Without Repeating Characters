@@ -1,0 +1,25 @@
+public class Solution {
+    /**
+    https://www.lintcode.com/problem/384/
+     * @param s: a string
+     * @return: an integer
+     */
+    public int lengthOfLongestSubstring(String s) {
+        // write your code here
+        HashSet<Character> set = new HashSet<>();
+        int fast = 0, slow = 0;
+        int res = 0;
+        while (fast < s.length()) {
+            if (set.contains(s.charAt(fast))) {
+                while (set.contains(s.charAt(fast))) {
+                    set.remove(s.charAt(slow));
+                    slow++;
+                }
+            }
+            set.add(s.charAt(fast));
+            fast++;
+            res = Math.max(res, set.size());
+        }
+        return res;
+    }
+}

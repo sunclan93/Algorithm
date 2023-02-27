@@ -5,7 +5,7 @@ public class Solution {
      * @return: an integer
      */
     /*
-        左右指针，每次计算面积后移动较小的那个
+        左右指针，每次计算面积后移动较小的那个,记录最大值
     */
     public int maxArea(int[] heights) {
         // write your code here
