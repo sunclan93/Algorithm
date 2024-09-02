@@ -13,12 +13,23 @@ https://www.lintcode.com/problem/30/
 1272. Remove Interval
 https://www.lintcode.com/problem/3678/
 435. Non-overlapping Intervals
+
 1288. Remove Covered Intervals
 352. Data Stream as Disjoint Intervals
 1229. Meeting Scheduler (返回最早的common slot，有长度限制）
 986. Interval List Intersections (返回所有的common slot, 无长度限制)
 759. Employee Free Time
 218. The Skyline Problem
+
+## 2. BFS
+102. Binary Tree Level Order Traversal
+111. Minimum Depth of Binary Tree
+127. Word Ladder
+752. Open the Lock
+207. Course Schedule
+210. Course Schedule II
+490. The Maze
+505. The Maze II
 
 ```
 
