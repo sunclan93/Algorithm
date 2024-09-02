@@ -7,7 +7,7 @@ https://www.lintcode.com/problem/920/
 https://www.lintcode.com/problem/919/
 pq solution
 56. Merge Intervals
-https://www.lintcode.com/problem/1889/
+https://www.lintcode.com/problem/156/
 57. Insert Interval
 https://www.lintcode.com/problem/30/
 1272. Remove Interval
